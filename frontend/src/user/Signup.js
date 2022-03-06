@@ -48,6 +48,7 @@ const Signup = () => {
           onChange={handleChange("name")}
           type="text"
           className="form-control"
+          autoComplete="on"
           value={name}
         />
       </div>
@@ -58,6 +59,7 @@ const Signup = () => {
           onChange={handleChange("email")}
           type="email"
           className="form-control"
+          autoComplete="on"
           value={email}
         />
       </div>

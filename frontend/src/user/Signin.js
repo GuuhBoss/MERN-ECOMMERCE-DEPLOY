@@ -48,6 +48,7 @@ const Signin = () => {
           onChange={handleChange("email")}
           type="email"
           className="form-control"
+          autoComplete="on"
           value={email}
         />
       </div>
@@ -58,6 +59,7 @@ const Signin = () => {
           onChange={handleChange("password")}
           type="password"
           className="form-control"
+          autoComplete="on"
           value={password}
         />
       </div>
