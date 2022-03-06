@@ -4,7 +4,7 @@ export const signup = (user) => {
   // console.log(name, email, password);
   // console.log(user);
   // console.log(JSON.stringify(user))
-  return fetch(`${API}/signup`, {
+  return fetch(`/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -24,7 +24,7 @@ export const signin = (user) => {
   // console.log(name, email, password);
   // console.log(user);
   // console.log(JSON.stringify(user))
-  return fetch(`${API}/signin`, {
+  return fetch(`/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -52,7 +52,7 @@ export const signout = (next) => {
     localStorage.removeItem("jwt");
     next();
 
-    return fetch(`${API}/signout`, {
+    return fetch(`/signout`, {
       method: "GET",
       headers: {
         Accept: "application/json",
