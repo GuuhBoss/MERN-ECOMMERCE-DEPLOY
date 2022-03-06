@@ -12,7 +12,7 @@ const Signup = () => {
     success: false,
   });
 
-  const { name, email, password, success, error} = values;
+  const { name, email, password, success, error } = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -20,10 +20,13 @@ const Signup = () => {
 
   const clickSubmit = (event) => {
     event.preventDefault();
-    signup({ name, email, password })
-    .then((data) => {
+    signup({ name, email, password }).then((data) => {
       if (data.firstError || data.error) {
-        setValues({ ...values, error: data.firstError || data.error, success: false });
+        setValues({
+          ...values,
+          error: data.firstError || data.error,
+          success: false,
+        });
       } else {
         setValues({
           ...values,
@@ -65,6 +68,7 @@ const Signup = () => {
           onChange={handleChange("password")}
           type="password"
           className="form-control"
+          autoComplete="on"
           value={password}
         />
       </div>
@@ -88,7 +92,7 @@ const Signup = () => {
       className="alert alert-info"
       style={{ display: success ? "" : "none" }}
     >
-      New account is created. Please <Link to='/signin'>Signin</Link>
+      New account is created. Please <Link to="/signin">Signin</Link>
     </div>
   );
 
