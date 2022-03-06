@@ -49,7 +49,6 @@ const Home = () => {
       className="container"
     >
       <Search />
-      <h1 className="alert alert-danger text-muted text-center mb-5">O search tá bugado</h1>
       <h2 className="mb-4"> Best Sellers</h2>
       <div className="row">
         {productsBySell.map((product, i) => (
