@@ -4,7 +4,7 @@ export const signup = (user) => {
   // console.log(name, email, password);
   // console.log(user);
   // console.log(JSON.stringify(user))
-  return fetch(`/signup`, {
+  return fetch(`${API}/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -24,7 +24,7 @@ export const signin = (user) => {
   // console.log(name, email, password);
   // console.log(user);
   // console.log(JSON.stringify(user))
-  return fetch(`/signin`, {
+  return fetch(`${API}/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -52,7 +52,7 @@ export const signout = (next) => {
     localStorage.removeItem("jwt");
     next();
 
-    return fetch(`/signout`, {
+    return fetch(`${API}/signout`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -68,15 +68,14 @@ export const signout = (next) => {
   }
 };
 
-
 export const isAuthenticated = () => {
-  if(typeof window == 'undefined') {
-    return false
+  if (typeof window == "undefined") {
+    return false;
   }
 
-  if (localStorage.getItem('jwt')) {
-    return JSON.parse(localStorage.getItem('jwt'))
+  if (localStorage.getItem("jwt")) {
+    return JSON.parse(localStorage.getItem("jwt"));
   } else {
-    return false
+    return false;
   }
-}
+};
