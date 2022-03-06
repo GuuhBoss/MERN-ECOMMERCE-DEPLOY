@@ -74,11 +74,11 @@ const Checkout = ({ products, setRun = (f) => f, run = undefined }) => {
         nonce = data.nonce;
         // once you have nonce (card type, card number) send nonce as 'paymentMethodNonce'
         // and also total to be charged
-        console.log(
-          "send nonce and total to process: ",
-          nonce,
-          getTotal(products)
-        );
+        // console.log(
+        //   "send nonce and total to process: ",
+        //   nonce,
+        //   getTotal(products)
+        // );
         const paymentData = {
           paymentMethodNonce: nonce,
           amount: getTotal(products),
@@ -86,7 +86,7 @@ const Checkout = ({ products, setRun = (f) => f, run = undefined }) => {
 
         processPayment(userId, token, paymentData)
           .then((response) => {
-            console.log(response);
+            // console.log(response);
             // empty cart
             // create order
 
@@ -101,7 +101,7 @@ const Checkout = ({ products, setRun = (f) => f, run = undefined }) => {
               .then((response) => {
                 emptyCart(() => {
                   setRun(!run); // run useEffect in parent Cart
-                  console.log("payment success and empty cart");
+                  // console.log("payment success and empty cart");
                   setData({
                     loading: false,
                     success: true,

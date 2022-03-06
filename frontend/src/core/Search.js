@@ -25,7 +25,7 @@ const Search = () => {
   };
 
   const searchData = () => {
-    console.log(search, category); //não está a aparecer a "category"
+    console.log(search, category);
     if (search) {
       list({ search: search || undefined, category: category }).then((res) => {
         if (res.error) {
@@ -99,9 +99,7 @@ const Search = () => {
   );
 
   useEffect(() => {
-    return () => {
       loadCategories();
-    };
   }, []);
 
   return (

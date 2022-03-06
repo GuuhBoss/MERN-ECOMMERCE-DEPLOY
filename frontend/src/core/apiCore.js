@@ -93,7 +93,7 @@ export const getBraintreeClientToken = (userId, token) => {
 };
 
 export const processPayment = (userId, token, paymentData) => {
-  console.log(paymentData);
+  // console.log(paymentData);
   return fetch(`${API}/braintree/payment/${userId}`, {
     method: "POST",
     headers: {
